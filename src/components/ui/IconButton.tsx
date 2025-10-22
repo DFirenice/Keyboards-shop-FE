@@ -8,6 +8,7 @@ type TIconButtonProps = {
     color?: string
     size?: TIconSize
     text?: string | React.ReactElement
+    strokeWidth?: number
     variant?: React.ComponentProps<typeof Button>["variant"]
 }
 
@@ -15,6 +16,7 @@ export default function IconButton ({
     icon, color = "",
     size = "default", text,
     variant = "ghost",
+    strokeWidth = 2,
     ...props
 }: TIconButtonProps & React.ComponentProps<"button">) {
     return (
@@ -27,7 +29,7 @@ export default function IconButton ({
             size={text ? "default" : "icon"}
             {...props}
         >
-            <Icon color={color} id={icon} size={size} />
+            <Icon color={color} id={icon} size={size} strokeWidth={strokeWidth} />
             { text }
         </Button>
     )

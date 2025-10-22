@@ -5,7 +5,7 @@ import Search from "@app-ui/Search"
 import IconButton from "@app-ui/IconButton"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { useIsCurrentPath } from "@/lib/isCurrentPath"
+import { useIsCurrentPath } from "@/hooks/useIsCurrentPath"
 
 const Header = () => {
     const navLinks = [
@@ -14,9 +14,11 @@ const Header = () => {
         ['About', '/about'],
         ['Contact Us', '/contact']
     ]
+
+    const isCurrentPath = useIsCurrentPath()
     
     return (
-        <header className="fixed top-0 left-0 w-full bg-background border-b-2 border-muted-foreground">
+        <header className="fixed z-50 top-0 left-0 w-full bg-background border-b-2 border-muted-foreground">
             <div className="exrta-header-inset container mx-auto flex flex-row items-center justify-around gap-12">
                 <Heading className="font-bold font-mono" size="large">cyber</Heading>
                 <Search />
@@ -24,7 +26,7 @@ const Header = () => {
                     <Link key={`nav_${link}`} href={link} className={
                         cn(
                             "whitespace-nowrap text-muted-foreground hover:text-foreground font-semibold",
-                            { "text-foreground": useIsCurrentPath(link) }
+                            { "text-foreground": isCurrentPath(link) }
                         )
                     }>
                         { text }

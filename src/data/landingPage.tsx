@@ -33,3 +33,5 @@ export const categories: TCategoriesData = [
     link: '/categories/other',
   },
 ]
+
+export const tabListData = ["New Arrival", "Bestseller", "Featured Products"]

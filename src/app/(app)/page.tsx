@@ -1,14 +1,23 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import Heading from "@/components/ui/Heading"
 import Icon from "@/components/ui/Icon"
 import IconButton from "@/components/ui/IconButton"
 import Link from "next/link"
+import { Tablist } from "@/components/tabSwapper/Tablist"
+import { Tabs } from "@/contexts/tabsContext"
 
-import { categories } from "@/data/landingPage"
+import { categories, tabListData } from "@/data/landingPage"
+import { TabPanel } from "@/components/tabSwapper/TabPanel"
+import { TabLink } from "@/components/tabSwapper/TabLink"
+import Image from "next/image"
+import LikeButton from "@/components/ui/LikeButton"
 
 const LandingPage = () => {
     return (
         <div className="w-full">
+            {/* Hero */}
             <section className="w-full h-[80vh] landing-hero-bg">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center">
                     <p className="font-semibold text-lg text-muted-foreground">PC Peripherals for Real Gamers</p>
@@ -20,6 +29,7 @@ const LandingPage = () => {
                     <Button size="lg" variant="outline" className="text-primary-foreground">Shop Now</Button>
                 </div>
             </section>
+            {/* Browse Categories */}
             <section className="w-full h-[75vh]">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center gap-12">
                     <div className="flex flex-row justify-between">
@@ -36,7 +46,7 @@ const LandingPage = () => {
                                 href={link}
                                 className="
                                     flex gap-3 flex-col items-center justify-center text-center
-                                    bg-input rounded-md h-48 max-h-48 aspect-square
+                                    bg-input rounded-4xl h-48 max-h-48 aspect-square
                                 ">
                                 <div className="relative h-auto w-1/3">
                                     <Icon id={icon} size="fill" strokeWidth={1} />
@@ -45,6 +55,37 @@ const LandingPage = () => {
                             </Link>
                         )) }
                     </div>
+                </div>
+            </section>
+            {/* Demo Products */}
+            <section className="w-full py-12">
+                <div className="container mx-auto">
+                    <Tabs defaultTab={tabListData[0]}>
+                        <Tablist>
+                            { tabListData.map(link =>
+                                <TabLink value={link} key={`link_${link}`}>
+                                    <span>{ link }</span>
+                                </TabLink>
+                            ) }
+                        </Tablist>
+                        { tabListData.map(link =>
+                            // Draw a component with newly backend-parsed items
+                            <TabPanel value={link} key={`panel_${link}`}>
+                                <div className="relative flex justify-center items-center flex-col bg-input w-68 h-fit rounded-md py-4 px-4">
+                                    {/* Should be LikeButton component instead */}
+                                    <LikeButton isWishListed={false} />
+                                    <div className="relative w-[75%] h-48 mx-6">
+                                        <Image src="/images/sample_keyboard.png" alt="Keyboard" objectFit="cover" className="pointer-events-none" fill />
+                                    </div>
+                                    <div className="text-center mb-6">
+                                        <Heading level={3} className="font-medium">Meletrix Zoom65 v2.5</Heading>
+                                        <Heading level={3} size="large" className="font-bold font-mono mt-2">$120</Heading>
+                                    </div>
+                                    <Button size="lg" className="w-[90%] mx-auto">Buy Now</Button>
+                                </div>
+                            </TabPanel>
+                        ) }
+                    </Tabs>
                 </div>
             </section>
         </div>
