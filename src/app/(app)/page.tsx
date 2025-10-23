@@ -103,6 +103,7 @@ const LandingPage = () => {
                                     "bg-primary text-primary-foreground": idx === 3,
                                 }
                             )}
+                            key={`product:${imageSrc}`}
                         >
                             <div className="relative h-72 w-full">
                                 <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
