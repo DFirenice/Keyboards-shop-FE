@@ -8,11 +8,12 @@ import Link from "next/link"
 import { Tablist } from "@/components/tabSwapper/Tablist"
 import { Tabs } from "@/contexts/tabsContext"
 
-import { categories, tabListData } from "@/data/landingPage"
+import { categories, productsData, tabListData } from "@/data/landingPage"
 import { TabPanel } from "@/components/tabSwapper/TabPanel"
 import { TabLink } from "@/components/tabSwapper/TabLink"
 import Image from "next/image"
 import LikeButton from "@/components/ui/LikeButton"
+import { cn } from "@/lib/utils"
 
 const LandingPage = () => {
     return (
@@ -30,7 +31,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Browse Categories */}
-            <section className="w-full h-[75vh]">
+            <section className="w-full mt-42">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center gap-12">
                     <div className="flex flex-row justify-between">
                         <Heading size="large" className="font-semibold">Browse by Category</Heading>
@@ -58,7 +59,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Demo Products */}
-            <section className="w-full py-12">
+            <section className="w-full py-12 mt-42">
                 <div className="container mx-auto">
                     <Tabs defaultTab={tabListData[0]}>
                         <Tablist>
@@ -84,8 +85,37 @@ const LandingPage = () => {
                                     <Button size="lg" className="w-[90%] mx-auto">Buy Now</Button>
                                 </div>
                             </TabPanel>
-                        ) }
+                        )}
                     </Tabs>
+                </div>
+            </section>
+            {/* Product Range Demo */}
+            <section className="w-full mt-42 bg-gradient-to-r from-50% to-50% bg-background to-primary">
+                <div className="container mx-auto flex flex-row justify-center w-full">
+                    {productsData.map(({ imageSrc, title, description }, idx) => (
+                        <div
+                            className={cn(
+                                "shrink grow px-6 flex flex-col gap-4 py-8",
+                                {
+                                    "bg-transparent": idx === 0,
+                                    "bg-background-elevated/75": idx === 1,
+                                    "bg-input": idx === 2,
+                                    "bg-primary text-primary-foreground": idx === 3,
+                                }
+                            )}
+                        >
+                            <div className="relative h-72 w-full">
+                                <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
+                            </div>
+                            <div>
+                                <Heading className="font-light my-2.5" size="large">{ title }</Heading>
+                                <p className="text-muted-foreground text-sm max-w-sm h-18">{ description }</p>
+                            </div>
+                            <Link href="#" className="mt-auto">
+                                <Button variant="outline" size="lg">Show Now</Button>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

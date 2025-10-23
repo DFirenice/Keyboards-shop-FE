@@ -7,8 +7,8 @@ const LikeButton = ({ isWishListed = false }: { isWishListed: boolean }) => {
             <Icon
                 strokeWidth={1}
                 className={cn(
-                    "text-foreground hover:fill-red-700 hover:text-red-700",
-                    { "fill-red-700 text-red-700": isWishListed }
+                    "text-foreground hover:fill-red-500 hover:text-red-500",
+                    { "fill-red-500 text-red-500": isWishListed }
                 )}
                 id="heart" size="small"
             />
