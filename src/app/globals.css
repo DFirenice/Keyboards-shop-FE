@@ -181,6 +181,11 @@ body {
   background-size: 75vh;
 }
 
+.bg-subscription {
+  background: linear-gradient(0deg, transparent, var(--color-background)), url('/images/email_subscription.png') no-repeat 50% top;
+  background-size: cover;
+}
+
 /* Basic header's height */
 .exrta-header-inset {
   @apply min-h-18;

@@ -9,6 +9,7 @@ import headphones from '@/assets/icons/headphones.svg'
 import mouse from '@/assets/icons/mouse.svg'
 import gridLayout from '@/assets/icons/layout-grid.svg'
 import keyboard from '@/assets/icons/keyboard.svg'
+import mail from '@/assets/icons/mail.svg'
 
 export const icons = {
   search,
@@ -22,4 +23,5 @@ export const icons = {
   mouse,
   gridLayout,
   keyboard,
+  mail,
 }

@@ -17,9 +17,9 @@ import { cn } from "@/lib/utils"
 
 const LandingPage = () => {
     return (
-        <div className="w-full">
+        <div className="w-full overflow-x-hidden">
             {/* Hero */}
-            <section className="w-full h-[80vh] landing-hero-bg">
+            <section className="w-full h-[80vh] landing-hero-bg px-12">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center">
                     <p className="font-semibold text-lg text-muted-foreground">PC Peripherals for Real Gamers</p>
                     <Heading size="extra" className="text-primary-foreground">
@@ -31,7 +31,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Browse Categories */}
-            <section className="w-full mt-42">
+            <section className="w-full mt-42 px-12">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center gap-12">
                     <div className="flex flex-row justify-between">
                         <Heading size="large" className="font-semibold">Browse by Category</Heading>
@@ -59,7 +59,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Demo Products */}
-            <section className="w-full py-12 mt-42">
+            <section className="w-full py-12 mt-42 px-12">
                 <div className="container mx-auto">
                     <Tabs defaultTab={tabListData[0]}>
                         <Tablist>
@@ -117,6 +117,42 @@ const LandingPage = () => {
                             </Link>
                         </div>
                     ))}
+                </div>
+            </section>
+            {/* Discounts */}
+            <section className="w-full mt-42 px-12">
+                <div className="container mx-auto">
+                    <Heading className="font-semibold" size="large">Discounts up to 50%</Heading>
+                    <div className="mt-8 flex flex-row gap-4">
+                        {productsData.map(({ imageSrc, title }, idx) => (
+                            <div
+                                className="bg-secondary flex-1 shrink grow px-6 flex flex-col gap-4 py-8 rounded-2xl text-center"
+                                key={`onsale:${imageSrc}_${idx}`}
+                            >
+                                <div className="relative h-72 w-full">
+                                    <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
+                                </div>
+                                <Heading className="font-light my-2.5" size="large">{ title }</Heading>
+                                <Link href="#" className="mt-auto">
+                                    <Button size="lg">Show Now</Button>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            {/* Email Subscription */}
+            <section className="w-full mt-12 bg-subscription px-12">
+                <div className="container mx-auto h-[50dvh] flex flex-col items-center justify-center gap-12">
+                    <div className="font-semibold text-center">
+                        <Heading size="massive">Join Our Newsletter</Heading>
+                        <p>Sign up for deals, new products and promotions</p>
+                    </div>
+                    <div className="border-b border-border mx-auto flex flex-row items-center max-w-96">
+                        <Icon size="tiny" className="text-secondary-foreground" id="mail" />
+                        <input type="email" name="email" placeholder="Email Address" className="flex-1 mx-2 border-none outline-none h-10 px-2" />
+                        <Button variant="ghost">Signup</Button>
+                    </div>
                 </div>
             </section>
         </div>
