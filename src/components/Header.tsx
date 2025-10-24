@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <header className="fixed z-50 top-0 left-0 w-full bg-background border-b-2 border-muted-foreground">
             <div className="exrta-header-inset container mx-auto flex flex-row items-center justify-around gap-12">
-                <Heading className="font-bold font-mono" size="large">cyber</Heading>
+                <Heading className="font-bold font-mono italic" size="large">cyber</Heading>
                 <Search />
                 { navLinks.map(([text, link]) => (
                     <Link key={`nav_${link}`} href={link} className={
