@@ -10,6 +10,7 @@ import mouse from '@/assets/icons/mouse.svg'
 import gridLayout from '@/assets/icons/layout-grid.svg'
 import keyboard from '@/assets/icons/keyboard.svg'
 import mail from '@/assets/icons/mail.svg'
+import x from "@/assets/icons/x.svg"
 
 export const icons = {
   search,
@@ -24,4 +25,5 @@ export const icons = {
   gridLayout,
   keyboard,
   mail,
+  x,
 }

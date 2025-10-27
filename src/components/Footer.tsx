@@ -1,4 +1,5 @@
-import Heading from "./ui/Heading"
+import Heading from "@app-ui/Heading"
+import Logo from "@app-ui/Logo"
 
 const StyledHeading = ({ children }: { children: React.ReactNode }) => (
     <Heading className="font-semibold font-mono">
@@ -12,8 +13,8 @@ const Footer = () => {
             <div className="container mx-auto min-h-[50vh] flex flex-col gap-6 justify-center py-24">
                 <div className="flex flex-wrap flex-row gap-4 justify-evenly">
                     <div>
-                        <Heading size="large" className="font-medium font-mono italic">cyber</Heading>
-                        <div className="text-primary-foreground/60 font-light">
+                        <Logo className="bg-background" />
+                        <div className="mt-4 text-primary-foreground/60 font-light">
                             <span>We&apos;re redefining the way Ukraine sees PC peripherals.</span><br />
                             <span>Premium gear, fair prices, and a community that cares.</span>
                         </div>
