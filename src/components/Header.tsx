@@ -39,6 +39,7 @@ const Header = () => {
                     <Link href="/cart"> <IconButton size="tiny" icon="cart" /> </Link>
                     <IconButton size="tiny" icon="user" />
                 </div>
+                <IconButton size="tiny" icon="languages" />
             </div>
         </header>
     )

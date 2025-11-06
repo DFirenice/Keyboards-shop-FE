@@ -8,7 +8,7 @@ import Link from "next/link"
 import { Tablist } from "@/components/tabSwapper/Tablist"
 import { Tabs } from "@/contexts/tabsContext"
 
-import { categories, productsData, tabListData } from "@/data/landingPage"
+import { categories, productsData } from "@/data/landingPage"
 import { TabPanel } from "@/components/tabSwapper/TabPanel"
 import { TabLink } from "@/components/tabSwapper/TabLink"
 import Image from "next/image"
@@ -18,6 +18,13 @@ import { useTranslations } from "next-intl"
 
 const LandingPage = () => {
     const t = useTranslations()
+    const thp = useTranslations("home-page.products.tablist")
+
+    const tabListData = [
+        thp("new"),
+        thp("bestseller"),
+        thp("featured")
+    ]
 
     return (
         <div className="w-full overflow-x-hidden">
@@ -37,7 +44,7 @@ const LandingPage = () => {
             <section className="w-full mt-42 px-12">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center gap-12">
                     <div className="flex flex-row justify-between">
-                        <Heading size="large" className="font-semibold">Browse by Category</Heading>
+                        <Heading size="large" className="font-semibold">{ t("home-page.categories._title") }</Heading>
                         <div className="flex flex-row gap-2">
                             <IconButton size="small" icon="chevronLeft" />
                             <IconButton size="small" icon="chevronRight" />
@@ -85,7 +92,7 @@ const LandingPage = () => {
                                         <Heading level={3} className="font-medium">Meletrix Zoom65 v2.5</Heading>
                                         <Heading level={3} size="large" className="font-bold font-mono mt-2">$120</Heading>
                                     </div>
-                                    <Button size="lg" className="w-[90%] mx-auto">Buy Now</Button>
+                                    <Button size="lg" className="w-[90%] mx-auto">{ t("misc.buy-now") }</Button>
                                 </div>
                             </TabPanel>
                         )}
@@ -112,7 +119,7 @@ const LandingPage = () => {
                                 <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
                             </div>
                             <div>
-                                <Heading className="font-light my-2.5" size="large">{ t(title) }</Heading>
+                                <Heading className="font-light my-2.5" size="large">{ idx === 0 ? t(title) : title }</Heading>
                                 <p className="text-muted-foreground text-sm max-w-sm h-18">{ description }</p>
                             </div>
                             <Link href="#" className="mt-auto">
@@ -135,7 +142,7 @@ const LandingPage = () => {
                                 <div className="relative h-72 w-full">
                                     <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
                                 </div>
-                                <Heading className="font-light my-2.5" size="large">{ t(title) }</Heading>
+                                <Heading className="font-light my-2.5" size="large">{ idx === 0 ? t(title) : title }</Heading>
                                 <Link href="#" className="mt-auto">
                                     <Button size="lg">{ t("misc.shop-now") }</Button>
                                 </Link>
@@ -145,7 +152,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Email Subscription */}
-            <section className="w-full mt-12 bg-subscription px-12">
+            <section className="w-full mt-24 bg-subscription px-12">
                 <div className="container mx-auto h-[50dvh] flex flex-col items-center justify-center gap-12">
                     <div className="font-semibold text-center">
                         <Heading size="massive">{ t("home-page.email-subscription.title") }</Heading>

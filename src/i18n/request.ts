@@ -1,13 +1,17 @@
 import {getRequestConfig} from 'next-intl/server';
+import { cookies } from 'next/headers';
 
-type TLocales = 'en' | 'ua'
+type TLocales = 'en' | 'ua' | string | undefined
 
 export default getRequestConfig(async () => {
-  // Static for now, we'll change this later
-  const locale: TLocales = 'en';
+  const storage = await cookies()
+  const locale: TLocales = 'ua' // storage.get("locale")?.value || 'en';
  
   return {
     locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
+    messages: (
+      (await import(`../../messages/${locale}.json`))?.default
+        || ((await import(`../../messages/en.json`))?.default)
+    ),
   };
 });

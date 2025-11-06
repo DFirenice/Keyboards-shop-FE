@@ -1,4 +1,5 @@
 import { Ticons } from "@/types/icons"
+import { useTranslations } from "next-intl"
 
 export type TCategoriesData = {
   text: string
@@ -34,15 +35,13 @@ export const categories: TCategoriesData = [
   },
 ]
 
-export const tabListData = ["New Arrival", "Bestseller", "Featured Products"]
-
 export type TProductsData = {
   imageSrc: string
   title: string
   description: string
 }[]
 
-export const productsData : TProductsData = [
+export const productsData: TProductsData = [
   {
     imageSrc: "/images/sample_keyboard.png",
     title: "home-page.products.popular",

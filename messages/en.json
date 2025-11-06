@@ -17,6 +17,7 @@
         "tagline": "PC Peripherals for Real Gamers",
         "slogan": "Created to change everything for the better. For everyone",
         "categories": {
+            "_title": "Browse by Categories",
             "keyboards": "Keyboards",
             "mouses": "Mouses",
             "headphones": "Headphones",
@@ -24,7 +25,12 @@
             "other": "Other"
         },
         "products": {
-            "popular": "Popular Products"
+            "popular": "Popular Products",
+            "tablist": {
+                "new": "New arrival",
+                "bestseller": "Bestseller",
+                "featured": "Featured"
+            }
         },
         "discounts": {
             "heading": "Discounts up to 50%"
@@ -34,5 +40,26 @@
             "subtext": "Sign up for deals, new products and promotions",
             "placeholder": "Email Address"
         }
+    },
+    "footer": {
+        "our-goal": [
+            "We're redefining the way Ukraine sees PC peripherals.",
+            "Premium gear, fair prices, and a community that cares."
+        ],
+        "services": {
+            "_title": "Services",
+            "contracts": "Service contracts",
+            "payment": "Payment"
+        },
+        "customer-assistance": {
+            "_title": "Assistance to the buyer",
+            "find-order": "Find an order",
+            "terms-of-delivery": "Terms of delivery",
+            "exchange-and-return": "Exchange and return of goods",
+            "guarantee": "Guarantee",
+            "faq": "Frequently asked questions",
+            "terms-of-use": "Terms of use of the site"
+        },
+        "copyright": "All rights Reserved"
     }
 }

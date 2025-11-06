@@ -11,6 +11,7 @@ import gridLayout from '@/assets/icons/layout-grid.svg'
 import keyboard from '@/assets/icons/keyboard.svg'
 import mail from '@/assets/icons/mail.svg'
 import x from "@/assets/icons/x.svg"
+import languages from "@/assets/icons/languages.svg"
 
 export const icons = {
   search,
@@ -26,4 +27,5 @@ export const icons = {
   keyboard,
   mail,
   x,
+  languages,
 }

@@ -1,38 +1,65 @@
 {
-    "header": {
-        "links": {
-            "home": "Home",
-            "catalog": "Каталог",
-            "about": "About",
-            "contact": "Contact us"
-        },
-        "search": "Search"
+  "header": {
+    "links": {
+      "home": "Головна",
+      "catalog": "Каталог",
+      "about": "Про нас",
+      "contact": "Зв’язатися з нами"
     },
-    "misc": {
-        "shop-now": "Shop Now",
-        "buy-now": "Buy Now",
-        "sign-up": "Sign Up"
+    "search": "Пошук"
+  },
+  "misc": {
+    "shop-now": "Купити зараз",
+    "buy-now": "Придбати зараз",
+    "sign-up": "Зареєструватися"
+  },
+  "home-page": {
+    "tagline": "ПК-периферія для справжніх геймерів",
+    "slogan": "Створено, щоб змінити все на краще. Для кожного.",
+    "categories": {
+      "_title": "Знайти за Категорією",
+      "keyboards": "Клавіатури",
+      "mouses": "Миші",
+      "headphones": "Навушники",
+      "microphones": "Мікрофони",
+      "other": "Інше"
     },
-    "home-page": {
-        "tagline": "PC Peripherals for Real Gamers",
-        "slogan": "Created to change everything for the better. For everyone",
-        "categories": {
-            "keyboards": "Keyboards",
-            "mouses": "Mouses",
-            "headphones": "Headphones",
-            "microphones": "Microphones",
-            "other": "Other"
-        },
-        "products": {
-            "popular": "Popular Products"
-        },
-        "discounts": {
-            "heading": "Discounts up to 50%"
-        },
-        "email-subscription": {
-            "title": "Join Our Newsletter",
-            "subtext": "Sign up for deals, new products and promotions",
-            "placeholder": "Email Address"
-        }
+    "products": {
+      "popular": "Популярні товари",
+      "tablist": {
+        "new": "Новинка",
+        "bestseller": "Бестселер",
+        "featured": "Рекомендовані"
+      }
+    },
+    "discounts": {
+      "heading": "Знижки до 50%"
+    },
+    "email-subscription": {
+      "title": "Підпишіться на нашу розсилку",
+      "subtext": "Отримуйте пропозиції, нові товари та акції",
+      "placeholder": "Адреса електронної пошти"
     }
+  },
+  "footer": {
+    "our-goal": [
+      "Ми змінюємо уявлення України про ПК-периферію.",
+      "Преміум обладнання, чесні ціни та спільнота, якій не байдуже."
+    ],
+    "services": {
+      "_title": "Послуги",
+      "contracts": "Сервісні контракти",
+      "payment": "Оплата"
+    },
+    "customer-assistance": {
+      "_title": "Допомога покупцю",
+      "find-order": "Знайти замовлення",
+      "terms-of-delivery": "Умови доставки",
+      "exchange-and-return": "Обмін і повернення товарів",
+      "guarantee": "Гарантія",
+      "faq": "Поширені запитання",
+      "terms-of-use": "Умови користування сайтом"
+    },
+    "copyright": "Всі права захищені"
+  }
 }
