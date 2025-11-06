@@ -14,20 +14,23 @@ import { TabLink } from "@/components/tabSwapper/TabLink"
 import Image from "next/image"
 import LikeButton from "@/components/ui/LikeButton"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
 
 const LandingPage = () => {
+    const t = useTranslations()
+
     return (
         <div className="w-full overflow-x-hidden">
             {/* Hero */}
             <section className="w-full h-[80vh] landing-hero-bg px-12">
                 <div className="container mx-auto w-full h-full flex flex-col justify-center">
-                    <p className="font-semibold text-lg text-muted-foreground">PC Peripherals for Real Gamers</p>
+                    <p className="font-semibold text-lg text-muted-foreground">{ t("home-page.tagline") }</p>
                     <Heading size="extra" className="text-primary-foreground">
                         <span className="font-thin">Keyduos </span>
                         <span className="font-bold">NJ80-AP</span>
                     </Heading>
-                    <p className="my-4 text-primary-foreground">Created to change everything for the better. For everyone</p>
-                    <Button size="lg" variant="outline" className="text-primary-foreground">Shop Now</Button>
+                    <p className="my-4 text-primary-foreground">{ t("home-page.slogan") }</p>
+                    <Button size="lg" variant="outline" className="text-primary-foreground">{ t("misc.shop-now") }</Button>
                 </div>
             </section>
             {/* Browse Categories */}
@@ -52,7 +55,7 @@ const LandingPage = () => {
                                 <div className="relative h-auto w-1/3">
                                     <Icon id={icon} size="fill" strokeWidth={1} />
                                 </div>
-                                <span>{ text }</span>
+                                <span>{ t(text) }</span>
                             </Link>
                         )) }
                     </div>
@@ -98,7 +101,7 @@ const LandingPage = () => {
                                 "shrink grow px-6 flex flex-col gap-4 py-8",
                                 {
                                     "bg-transparent": idx === 0,
-                                    "bg-background-elevated/75": idx === 1,
+                                    "bg-background-elevated": idx === 1,
                                     "bg-input": idx === 2,
                                     "bg-primary text-primary-foreground": idx === 3,
                                 }
@@ -109,11 +112,11 @@ const LandingPage = () => {
                                 <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
                             </div>
                             <div>
-                                <Heading className="font-light my-2.5" size="large">{ title }</Heading>
+                                <Heading className="font-light my-2.5" size="large">{ t(title) }</Heading>
                                 <p className="text-muted-foreground text-sm max-w-sm h-18">{ description }</p>
                             </div>
                             <Link href="#" className="mt-auto">
-                                <Button variant="outline" size="lg">Show Now</Button>
+                                <Button variant="outline" size="lg">{ t("misc.shop-now") }</Button>
                             </Link>
                         </div>
                     ))}
@@ -122,7 +125,7 @@ const LandingPage = () => {
             {/* Discounts */}
             <section className="w-full mt-42 px-12">
                 <div className="container mx-auto">
-                    <Heading className="font-semibold" size="large">Discounts up to 50%</Heading>
+                    <Heading className="font-semibold" size="large">{ t("home-page.discounts.heading") }</Heading>
                     <div className="mt-8 flex flex-row gap-4">
                         {productsData.map(({ imageSrc, title }, idx) => (
                             <div
@@ -132,9 +135,9 @@ const LandingPage = () => {
                                 <div className="relative h-72 w-full">
                                     <Image src={imageSrc} alt="Keyboard" objectFit="contain" className="pointer-events-none" fill />
                                 </div>
-                                <Heading className="font-light my-2.5" size="large">{ title }</Heading>
+                                <Heading className="font-light my-2.5" size="large">{ t(title) }</Heading>
                                 <Link href="#" className="mt-auto">
-                                    <Button size="lg">Show Now</Button>
+                                    <Button size="lg">{ t("misc.shop-now") }</Button>
                                 </Link>
                             </div>
                         ))}
@@ -145,13 +148,13 @@ const LandingPage = () => {
             <section className="w-full mt-12 bg-subscription px-12">
                 <div className="container mx-auto h-[50dvh] flex flex-col items-center justify-center gap-12">
                     <div className="font-semibold text-center">
-                        <Heading size="massive">Join Our Newsletter</Heading>
-                        <p>Sign up for deals, new products and promotions</p>
+                        <Heading size="massive">{ t("home-page.email-subscription.title") }</Heading>
+                        <p>{ t("home-page.email-subscription.subtext") }</p>
                     </div>
                     <div className="border-b border-border mx-auto flex flex-row items-center max-w-96">
                         <Icon size="tiny" className="text-secondary-foreground" id="mail" />
-                        <input type="email" name="email" placeholder="Email Address" className="flex-1 mx-2 border-none outline-none h-10 px-2" />
-                        <Button variant="ghost">Signup</Button>
+                        <input type="email" name="email" placeholder={t("home-page.email-subscription.placeholder")} className="flex-1 mx-2 border-none outline-none h-10 px-2" />
+                        <Button variant="ghost">{ t("misc.sign-up") }</Button>
                     </div>
                 </div>
             </section>

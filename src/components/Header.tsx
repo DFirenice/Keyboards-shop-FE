@@ -6,16 +6,18 @@ import Logo from "@app-ui/Logo"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useIsCurrentPath } from "@/hooks/useIsCurrentPath"
+import { useTranslations } from "next-intl"
 
 const Header = () => {
-    const navLinks = [
-        ['Home', '/'],
-        ['Catalog', '/catalog'],
-        ['About', '/about'],
-        ['Contact Us', '/contact']
-    ]
-
     const isCurrentPath = useIsCurrentPath()
+    const t = useTranslations("header")
+
+    const navLinks = [
+        [t('links.home'), '/'],
+        [t('links.catalog'), '/catalog'],
+        [t('links.about'), '/about'],
+        [t('links.contact'), '/contact']
+    ]
     
     return (
         <header className="fixed z-50 top-0 left-0 w-full bg-background border-b-1 border-border">

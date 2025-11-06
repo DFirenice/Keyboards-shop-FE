@@ -68,7 +68,7 @@ const ShoppingCartPage = () => {
                             )) }
                         </ul>
                     </div>
-                    <div className="rounded-2xl border-border border-1 p-12 space-y-8">
+                    <div className="rounded-2xl border-border border-1 p-12 space-y-8 sticky">
                         <Heading className="font-medium" size="medium">Order Summary</Heading>
                         <div className="flex flex-col gap-2">
                             <span>Discount code / Promo code</span>

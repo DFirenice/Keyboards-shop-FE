@@ -8,27 +8,27 @@ export type TCategoriesData = {
 
 export const categories: TCategoriesData = [
   {
-    text: 'Keyboards',
+    text: 'home-page.categories.keyboards',
     icon: 'keyboard',
     link: '/categories/keyboards',
   },
   {
-    text: 'Mouses',
+    text: 'home-page.categories.mouses',
     icon: 'mouse',
     link: '/categories/mouses',
   },
   {
-    text: 'Headphones',
+    text: 'home-page.categories.headphones',
     icon: 'headphones',
     link: '/categories/headphones',
   },
   {
-    text: 'Microphones',
+    text: 'home-page.categories.microphones',
     icon: 'mic',
     link: '/categories/microphones',
   },
   {
-    text: 'Other',
+    text: 'home-page.categories.other',
     icon: 'gridLayout',
     link: '/categories/other',
   },
@@ -45,7 +45,7 @@ export type TProductsData = {
 export const productsData : TProductsData = [
   {
     imageSrc: "/images/sample_keyboard.png",
-    title: "Popular Products",
+    title: "home-page.products.popular",
     description: "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use."
   },
   {

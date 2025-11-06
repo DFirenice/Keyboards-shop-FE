@@ -1,0 +1,38 @@
+{
+    "header": {
+        "links": {
+            "home": "Home",
+            "catalog": "Catalog",
+            "about": "About",
+            "contact": "Contact us"
+        },
+        "search": "Search"
+    },
+    "misc": {
+        "shop-now": "Shop Now",
+        "buy-now": "Buy Now",
+        "sign-up": "Sign Up"
+    },
+    "home-page": {
+        "tagline": "PC Peripherals for Real Gamers",
+        "slogan": "Created to change everything for the better. For everyone",
+        "categories": {
+            "keyboards": "Keyboards",
+            "mouses": "Mouses",
+            "headphones": "Headphones",
+            "microphones": "Microphones",
+            "other": "Other"
+        },
+        "products": {
+            "popular": "Popular Products"
+        },
+        "discounts": {
+            "heading": "Discounts up to 50%"
+        },
+        "email-subscription": {
+            "title": "Join Our Newsletter",
+            "subtext": "Sign up for deals, new products and promotions",
+            "placeholder": "Email Address"
+        }
+    }
+}
