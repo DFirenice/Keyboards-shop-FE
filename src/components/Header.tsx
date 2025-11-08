@@ -7,10 +7,20 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useIsCurrentPath } from "@/hooks/useIsCurrentPath"
 import { useTranslations } from "next-intl"
+import * as  DropdownMenu from "@radix-ui/react-dropdown-menu"
+import { flags } from "@/data/icons"
+import { Button } from "@app-ui/button"
+import Icon from "@app-ui/Icon"
+import { Ticons } from "@/types/icons"
+import { langs } from "@/data/langs"
+import Cookies from 'js-cookie'
+import { useRouter } from "next/navigation"
 
 const Header = () => {
     const isCurrentPath = useIsCurrentPath()
     const t = useTranslations("header")
+    // Router, used to force re-fetching server components with new locale
+    const router = useRouter()
 
     const navLinks = [
         [t('links.home'), '/'],
@@ -18,9 +28,14 @@ const Header = () => {
         [t('links.about'), '/about'],
         [t('links.contact'), '/contact']
     ]
+
+    const changeLocale = (l: any) => {
+        Cookies.set("locale", l)
+        router.refresh()
+    }
     
     return (
-        <header className="fixed z-50 top-0 left-0 w-full bg-background border-b-1 border-border">
+        <header className="fixed z-50 top-0 left-0 w-full bg-background border-b border-border">
             <div className="exrta-header-inset container mx-auto flex flex-row items-center justify-around gap-12">
                 <Logo />
                 <Search />
@@ -39,7 +54,21 @@ const Header = () => {
                     <Link href="/cart"> <IconButton size="tiny" icon="cart" /> </Link>
                     <IconButton size="tiny" icon="user" />
                 </div>
-                <IconButton size="tiny" icon="languages" />
+                <DropdownMenu.Root modal={false}>
+                    <DropdownMenu.Trigger>
+                        <IconButton size="tiny" icon="languages" />
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Content className="flex flex-col shadow-2xs bg-background rounded-lg border-border border py-1.5 px-1">
+                        { Object.keys(flags).map(locality => (
+                            <Button className="w-full justify-start gap-x-2.5" variant="ghost" onClick={() => changeLocale(locality)}>
+                                <div className="flex overflow-hidden rounded-xl">
+                                    <Icon size="tiny" id={locality as Ticons} />
+                                </div>
+                                <span>{ (langs as any)[locality] }</span>
+                            </Button>
+                        )) }
+                    </DropdownMenu.Content>
+                </DropdownMenu.Root>
             </div>
         </header>
     )

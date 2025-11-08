@@ -100,7 +100,7 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Product Range Demo */}
-            <section className="w-full mt-42 bg-gradient-to-r from-50% to-50% bg-background to-primary">
+            <section className="w-full mt-42 from-50% to-50% bg-background to-primary">
                 <div className="container mx-auto flex flex-row justify-center w-full">
                     {productsData.map(({ imageSrc, title, description }, idx) => (
                         <div
@@ -160,7 +160,12 @@ const LandingPage = () => {
                     </div>
                     <div className="border-b border-border mx-auto flex flex-row items-center max-w-96">
                         <Icon size="tiny" className="text-secondary-foreground" id="mail" />
-                        <input type="email" name="email" placeholder={t("home-page.email-subscription.placeholder")} className="flex-1 mx-2 border-none outline-none h-10 px-2" />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder={t("home-page.email-subscription.placeholder")}
+                            className="flex-1 mx-2 border-none outline-none h-10 px-2 text-ellipsis"
+                        />
                         <Button variant="ghost">{ t("misc.sign-up") }</Button>
                     </div>
                 </div>

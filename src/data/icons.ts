@@ -13,7 +13,16 @@ import mail from '@/assets/icons/mail.svg'
 import x from "@/assets/icons/x.svg"
 import languages from "@/assets/icons/languages.svg"
 
+import ua from "@/assets/icons/flags/ua.svg"
+import us from "@/assets/icons/flags/us.svg"
+
+// National flags
+export const flags = {
+  ua, us,
+}
+
 export const icons = {
+  ...flags,
   search,
   heart,
   user,
