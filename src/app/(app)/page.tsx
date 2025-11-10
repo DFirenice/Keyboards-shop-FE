@@ -12,9 +12,9 @@ import { categories, productsData } from "@/data/landingPage"
 import { TabPanel } from "@/components/tabSwapper/TabPanel"
 import { TabLink } from "@/components/tabSwapper/TabLink"
 import Image from "next/image"
-import LikeButton from "@/components/ui/LikeButton"
 import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
+import ProductCard from "@/components/ProductCard"
 
 const LandingPage = () => {
     const t = useTranslations()
@@ -82,18 +82,7 @@ const LandingPage = () => {
                         { tabListData.map(link =>
                             // Draw a component with newly backend-parsed items
                             <TabPanel value={link} key={`panel_${link}`}>
-                                <div className="relative flex justify-center items-center flex-col bg-input w-68 h-fit rounded-md py-4 px-4">
-                                    {/* Should be LikeButton component instead */}
-                                    <LikeButton isWishListed={false} />
-                                    <div className="relative w-[75%] h-48 mx-6">
-                                        <Image src="/images/sample_keyboard.png" alt="Keyboard" objectFit="cover" className="pointer-events-none" fill />
-                                    </div>
-                                    <div className="text-center mb-6">
-                                        <Heading level={3} className="font-medium">Meletrix Zoom65 v2.5</Heading>
-                                        <Heading level={3} size="large" className="font-bold font-mono mt-2">$120</Heading>
-                                    </div>
-                                    <Button size="lg" className="w-[90%] mx-auto">{ t("misc.buy-now") }</Button>
-                                </div>
+                                <ProductCard />
                             </TabPanel>
                         )}
                     </Tabs>

@@ -1,5 +1,4 @@
 import { Ticons } from "@/types/icons"
-import { useTranslations } from "next-intl"
 
 export type TCategoriesData = {
   text: string

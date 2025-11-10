@@ -68,15 +68,15 @@ const ShoppingCartPage = () => {
                             )) }
                         </ul>
                     </div>
-                    <div className="rounded-2xl border-border border-1 p-12 space-y-8 sticky">
+                    <div className="rounded-2xl border-border border p-12 space-y-8 sticky">
                         <Heading className="font-medium" size="medium">Order Summary</Heading>
                         <div className="flex flex-col gap-2">
                             <span>Discount code / Promo code</span>
-                            <input placeholder="Code" className="px-2 py-4 border-border border-1 rounded-md text-secondary-foreground" />
+                            <input placeholder="Code" className="px-2 py-4 border-border border rounded-md text-secondary-foreground" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <span>Your bonus card number</span>
-                            <input placeholder="Enter card number" className="px-2 py-4 border-border border-1 rounded-md text-secondary-foreground" />
+                            <input placeholder="Enter card number" className="px-2 py-4 border-border border rounded-md text-secondary-foreground" />
                         </div>
                         <div>
                             <PriceLabel isLeading label="Subtotal" price={2301} />
