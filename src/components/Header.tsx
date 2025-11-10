@@ -12,7 +12,7 @@ import { flags } from "@/data/icons"
 import { Button } from "@app-ui/button"
 import Icon from "@app-ui/Icon"
 import { Ticons } from "@/types/icons"
-import { langs } from "@/data/langs"
+import { langs, TKeyofLangs } from "@/data/langs"
 import Cookies from 'js-cookie'
 import { useRouter } from "next/navigation"
 
@@ -29,7 +29,7 @@ const Header = () => {
         [t('links.contact'), '/contact']
     ]
 
-    const changeLocale = (l: any) => {
+    const changeLocale = (l: string) => {
         Cookies.set("locale", l)
         router.refresh()
     }
@@ -60,11 +60,11 @@ const Header = () => {
                     </DropdownMenu.Trigger>
                     <DropdownMenu.Content className="flex flex-col shadow-2xs bg-background rounded-lg border-border border py-1.5 px-1">
                         { Object.keys(flags).map(locality => (
-                            <Button className="w-full justify-start gap-x-2.5" variant="ghost" onClick={() => changeLocale(locality)}>
+                            <Button key={`langs-locality:${locality}`} className="w-full justify-start gap-x-2.5" variant="ghost" onClick={() => changeLocale(locality)}>
                                 <div className="flex overflow-hidden rounded-xl">
                                     <Icon size="tiny" id={locality as Ticons} />
                                 </div>
-                                <span>{ (langs as any)[locality] }</span>
+                                <span>{ langs[locality as TKeyofLangs]! }</span>
                             </Button>
                         )) }
                     </DropdownMenu.Content>

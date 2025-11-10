@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type TFilters = Record<string, any[]>
+export type TFilters = Record<string, (string | boolean | number)[]>
 
 interface IFilterState {
     priceRange: [number, number]
