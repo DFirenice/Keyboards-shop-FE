@@ -61,5 +61,8 @@
             "terms-of-use": "Terms of use of the site"
         },
         "copyright": "All rights Reserved"
+    },
+    "filter-sidebar": {
+        "price-range": "Price Range"
     }
 }

@@ -1,18 +1,25 @@
 'use client'
 
 import Search from "@app-ui/Search"
+import Heading from "@app-ui/Heading"
 import { Accordion, AccordionItem, AccordionTrigger } from "@app-ui/accordion"
 import { AccordionContent } from "@radix-ui/react-accordion"
-import Heading from "./ui/Heading"
 import { Checkbox } from "@app-ui/checkbox"
 import { Slider } from "@app-ui/slider"
 
 import axios from 'axios'
 import { useFilterStore } from "@/stores/productFilter.store"
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 
 const FilterSidebar = () => {
     const [ filterOptions, setFilterOptions ] = useState<Record<string, string[]> | undefined>(undefined)
+    const t = useTranslations()
+
+    // Considered better performance (at least i want to believe so)
+    const priceLimit = useFilterStore(state => state.priceLimit),
+        priceRange = useFilterStore(state => state.priceRange),
+        setPriceRange = useFilterStore(state => state.setPriceRange)
     
     useEffect(() => {
         (async () => {
@@ -33,12 +40,18 @@ const FilterSidebar = () => {
         <section className="h-full w-[16.5vw] max-w-64 flex flex-col gap-4 sticky top-30">
             <Search />
             <div>
-                <label htmlFor="price-range">Price Range</label>
+                <label htmlFor="price-range" className="flex gap-1 items-center">
+                    <span className="flex-1">{ t("filter-sidebar.price-range") }</span>
+                    {/* Shall in theory be inputs */}
+                    <span className="text-sm font-medium font-mono">${ priceRange[0] } -</span>
+                    <span className="text-sm font-medium font-mono">${ priceRange[1] }</span>
+                </label>
                 <Slider
                     className="mt-2.5"
-                    defaultValue={[0, 1000]} // Custom values are comming from the backend later
-                    min={0}
-                    max={1000}
+                    defaultValue={priceLimit} // Custom values are comming from the backend later
+                    onValueChange={setPriceRange}
+                    min={priceLimit[0]}
+                    max={priceLimit[1]}
                 />
             </div>
             {/* Note: All of the accordions below must be fetched from the backend */}

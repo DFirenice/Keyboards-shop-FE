@@ -61,5 +61,8 @@
       "terms-of-use": "Умови користування сайтом"
     },
     "copyright": "Всі права захищені"
+  },
+  "filter-sidebar": {
+      "price-range": "Ціна"
   }
 }

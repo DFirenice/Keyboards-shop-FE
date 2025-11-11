@@ -1,16 +1,23 @@
 import { create } from 'zustand'
 
 export type TFilters = Record<string, (string | boolean | number)[]>
+export type TPriceRange = [number, number]
 
 interface IFilterState {
-    priceRange: [number, number]
+    priceLimit: TPriceRange
+    priceRange: TPriceRange
+    setPriceRange: (newRange: TPriceRange) => void
     filters: TFilters
     toggleFilter: (category: string, value: string) => void
     clearFilters: () => void
 }
 
+const initialPriceLimit = [0, 1000] as TPriceRange
+
 export const useFilterStore = create<IFilterState>((set) => ({
-    priceRange: [0, 1000],
+    priceLimit: initialPriceLimit,
+    priceRange: initialPriceLimit,
+    setPriceRange: (newRange) => set({ priceRange: newRange }),
     filters: {},
     toggleFilter: (category, value) => set((state) => {
         const currentValues = state.filters[category] || []
