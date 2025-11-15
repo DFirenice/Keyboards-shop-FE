@@ -2,6 +2,8 @@ import { useTranslations } from "next-intl"
 import Heading from "@app-ui/Heading"
 import Logo from "@app-ui/Logo"
 import React from "react"
+import IconButton from "./ui/IconButton"
+import Link from "next/link"
 
 const StyledHeading = ({ children }: { children: React.ReactNode }) => (
     <Heading className="font-semibold font-mono">
@@ -14,7 +16,7 @@ const Footer = () => {
     return (
         <footer className="bg-foreground text-primary-foreground">
             <div className="container mx-auto min-h-[50vh] flex flex-col gap-6 justify-center py-24">
-                <div className="flex flex-wrap flex-row gap-4 justify-evenly">
+                <div className="flex flex-wrap flex-row gap-4 mx-px-[5dvw] lg:px-[10dvw] justify-between">
                     <div>
                         <Logo className="bg-background" />
                         <div className="mt-4 text-primary-foreground/60 font-light">
@@ -43,7 +45,10 @@ const Footer = () => {
                             <li>{ t("customer-assistance.faq") }</li>
                             <li>{ t("customer-assistance.terms-of-use") }</li>
                         </ul>
-
+                    </div>
+                    <div className="basis-full space-x-2">
+                        <Link href="https://tiktok.com"><IconButton size="small" icon="tiktok" /></Link>
+                        <Link href="https://instagram.com"><IconButton size="small" icon="instagram" /></Link>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,11 @@
   "misc": {
     "shop-now": "Купити зараз",
     "buy-now": "Придбати зараз",
-    "sign-up": "Зареєструватися"
+    "sign-up": "Зареєструватися",
+    "pagination": {
+      "next": "Далі",
+      "prev": "Назад"
+    }
   },
   "home-page": {
     "tagline": "ПК-периферія для справжніх геймерів",
@@ -38,7 +42,7 @@
     "email-subscription": {
       "title": "Підпишіться на нашу розсилку",
       "subtext": "Отримуйте пропозиції, нові товари та акції",
-      "placeholder": "Електронна Адреса"
+      "placeholder": "Електронна адреса"
     }
   },
   "footer": {
@@ -63,6 +67,33 @@
     "copyright": "Всі права захищені"
   },
   "filter-sidebar": {
-      "price-range": "Ціна"
+    "price-range": "Діапазон цін"
+  },
+  "cart": {
+    "shopping-cart": "Кошик",
+    "summary": "Підсумок замовлення",
+    "discount-code": "Промокод / Код знижки",
+    "bonus-card": "Номер бонусної картки",
+    "checkout-button": "Перейти до оплати",
+    "subtotal": "Проміжний підсумок",
+    "estimated-tax": "Орієнтовний податок",
+    "estimated-shipping": "Орієнтовна доставка та обробка",
+    "total": "Всього",
+    "placeholder": {
+      "discount-code": "Код",
+      "card-number": "Введіть номер картки"
+    }
+  },
+  "checkout": {
+    "steps": {
+      "address": "Адреса",
+      "shipping": "Доставка",
+      "payment": "Оплата",
+      "step": "Етап"
+    },
+    "address": {
+      "heading": "Виберіть адресу"
+    },
+    "add-new-address": "Додати нову адресу"
   }
 }

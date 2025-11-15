@@ -12,6 +12,13 @@ import keyboard from '@/assets/icons/keyboard.svg'
 import mail from '@/assets/icons/mail.svg'
 import x from "@/assets/icons/x.svg"
 import languages from "@/assets/icons/languages.svg"
+import instagram from "@/assets/icons/instagram-logo.svg"
+import tiktok from "@/assets/icons/tiktok-logo.svg"
+import plus from "@/assets/icons/plus.svg"
+import minus from "@/assets/icons/minus.svg"
+import creditCard from "@/assets/icons/credit-card.svg"
+import shippingPackage from "@/assets/icons/package.svg"
+import mapPin from "@/assets/icons/map-pin.svg"
 
 import ua from "@/assets/icons/flags/ua.svg"
 import us from "@/assets/icons/flags/us.svg"
@@ -37,4 +44,11 @@ export const icons = {
   mail,
   x,
   languages,
+  instagram,
+  tiktok,
+  plus,
+  minus,
+  creditCard,
+  shippingPackage,
+  mapPin
 }

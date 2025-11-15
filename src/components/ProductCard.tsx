@@ -8,7 +8,7 @@ const ProductCard = () => {
     const t = useTranslations()
     
     return (
-        <div className="relative flex justify-center items-center flex-col bg-input w-68 h-fit rounded-md py-4 px-4">
+        <div className="relative flex justify-center items-center flex-col bg-input min-w-68 w-68 h-fit rounded-md py-4 px-4">
             <LikeButton isWishListed={false} />
             <div className="relative w-[75%] h-48 mx-6">
                 <Image src="/images/sample_keyboard.png" alt="Keyboard" objectFit="cover" className="pointer-events-none" fill />

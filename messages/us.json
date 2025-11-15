@@ -11,7 +11,11 @@
     "misc": {
         "shop-now": "Shop Now",
         "buy-now": "Buy Now",
-        "sign-up": "Sign Up"
+        "sign-up": "Sign Up",
+        "pagination": {
+            "next": "Next",
+            "prev": "Previous"
+        }
     },
     "home-page": {
         "tagline": "PC Peripherals for Real Gamers",
@@ -64,5 +68,32 @@
     },
     "filter-sidebar": {
         "price-range": "Price Range"
+    },
+    "cart": {
+        "shopping-cart": "Shopping Cart",
+        "summary": "Order Summary",
+        "discount-code": "Discount code / Promo code",
+        "bonus-card": "Your bonus card number",
+        "checkout-button": "Proceed to Checkout",
+        "subtotal": "Subtotal",
+        "estimated-tax": "Estimated tax",
+        "estimated-shipping": "Estimated shipping & handling",
+        "total": "Total",
+        "placeholder": {
+            "discount-code": "Code",
+            "card-number": "Enter card number"
+        }
+    },
+    "checkout": {
+        "steps": {
+            "address": "Address",
+            "shipping": "Shipping",
+            "payment": "Payment",
+            "step": "Step"
+        },
+        "address": {
+            "heading": "Select Address"
+        },
+        "add-new-address": "Add New Address"
     }
 }
